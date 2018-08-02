@@ -1,17 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kompose.cmd: C:\ProgramData\chocolatey\lib\kubernetes-kompose\tools\kompose.exe
-      convert --file=docker-compose.yml
-    kompose.version: 1.15.0 (e3cd4d4)
-  creationTimestamp: null
+  namespace: keycloak
   labels:
-    io.kompose.service: keycloak
+    service: keycloak
   name: keycloak
 spec:
   ports:
   - port: 8080
   selector:
-    io.kompose.service: keycloak
+    service: keycloak
   type: NodePort
